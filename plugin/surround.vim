@@ -219,6 +219,9 @@ function! s:wrap(string,char,type,removed,special)
       echo '\begin'.env
       let before = '\begin'.env
       let after  = '\end'.matchstr(env,'[^}]*').'}'
+    else
+      let before = '\('
+      let after = '\)'
     endif
   elseif newchar ==# 'f' || newchar ==# 'F'
     let fnc = input('function: ')
